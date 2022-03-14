@@ -142,7 +142,7 @@ vector<ll> naive() {
 	return ans;
 }
 
-void main2(ifstream& fin) {
+void test(ifstream& fin) {
 	int a;
 	fin>>n;
 	parent.resize(n);
@@ -183,7 +183,7 @@ void main2(ifstream& fin) {
 	// cout << "Average time: " << tot_time/NUM_ROUNDS << endl;
 	
 	for(int i = 0; i < ans1.size();i++) {
-		if(ans1[i]!=ans2[i]) {
+		if(ans1[i]!=ans2[i] && ans2[i]!=ans3[i]) {
 			cout<<"Not equal"<<endl;
 			return;
 		}
@@ -193,9 +193,11 @@ void main2(ifstream& fin) {
 }
 
 int main() {
-	for(int i = 1; i<12; i++) {
+	for(int i = 1; i<11; i++) {
 		string a = "input"+to_string(i)+".txt";
+		cout<<a<<endl;
 		ifstream fin(a);
-		main2(fin);
+		test(fin);
+		cout<<endl;
 	}
 }
